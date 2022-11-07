@@ -1,0 +1,24 @@
+{
+  "todolist": [
+    {
+      "ToDo": "make breakfast",
+      "completed": true
+    },
+    {
+      "ToDo": "study",
+      "completed": true
+    },
+    {
+      "ToDo": "take a break",
+      "completed": true
+    },
+    {
+      "ToDo": "change clothes",
+      "completed": false
+    },
+    {
+      "ToDo": "take a walk",
+      "completed": false
+    }
+  ]
+}
