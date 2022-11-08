@@ -5,28 +5,27 @@ function appendList() {
   return fetch(
     "https://raw.githubusercontent.com/ChasAcademy-Nshoan-Abdlwafa/JSON-Todo-List/main/data.json"
   )
-    .then((result) => result.json()) // skapa JSON-data, "jsonifiera"
+    .then((result) => result.json()) // Skapar JSON-data, "jsonifierar"
     .then((content) => {
-      // färdigt JSON-objekt att använda
-      /* Skapa for-loop, som går igenom varje element i listan
-      första delen: var ska man börja iterera, här börjar vi på allra första elementet, dvs. i = 0
-      andra delen: när ska vi sluta, här slutar vi när vi har nått sista elementet
-      tredje delen: hur många steg per iteration, här vill vi iterera över varje enskild listelement, så i++ (i += 1)*/
-      for (let i = 0; i < content.todolist.length; i++) {
-        // Skapa upp ett li-objekt i html, via javascript
-        let listItem = document.createElement("li");
+      // Färdigt JSON-objekt, redo att användas
 
-        // populera skapade li-elementet med värdet från ditt JSON-data
+      for (let i = 0; i < content.todolist.length; i++) {
+        // Skapar for-loop, som går igenom varje element i listan
+        // Första delen (let i = 0;): vart det ska börja iterera, här börjar det på allra första elementet, dvs. i = 0
+        // Andra delen (i < content.todolist.length;): när det ska sluta iterera, här avslutas itererationen när den har nått det sista elementet
+        // Tredje delen (i++): hur många steg per iteration, här itereras det över varje enskild listelement, så i++ (i += 1)
+
+        let listItem = document.createElement("li"); // Skapar ett li-objekt i HTML, via JavaScript
+
         let todoListItem = content.todolist[i];
-        listItem.innerHTML = todoListItem.ToDo;
+        listItem.innerHTML = todoListItem.ToDo; // Populera skapade li-elementet med värdena från JSON-datan
 
         if (todoListItem.completed) {
           listItem.classList.add("checked");
           listItem.classList.add("checkmark");
         }
 
-        // lägg till ditt li-element till din ul-lista, som du hämtade in från HTML-dokumentet
-        list.appendChild(listItem);
+        list.appendChild(listItem); // Lägger till li-element till ul-listan som hämtades in från HTML-dokumentet
       }
     });
 }
