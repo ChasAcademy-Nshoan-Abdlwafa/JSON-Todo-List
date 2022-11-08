@@ -8,6 +8,7 @@ body {
 ul {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 ul li {
@@ -17,11 +18,18 @@ ul li {
   font-size: 20px;
 }
 
-ul li.checked {
+.checked {
   text-decoration: line-through;
 }
 
-ul li.checked::before {
+.checked::before {
+  content: "\2713";
+  display: inline-block;
+  color: red;
+  padding: 0 6px 0 0;
+}
+
+/*ul li.checked::before {
   content: "";
   position: absolute;
   border-color: red;
@@ -32,4 +40,4 @@ ul li.checked::before {
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
-}
+}*/
